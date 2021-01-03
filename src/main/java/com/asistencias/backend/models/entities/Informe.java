@@ -19,12 +19,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 public class Informe implements Serializable {
 
-
-	
-
-
 	private static final long serialVersionUID = 1L;
 	
+	//Anotaciones
 	@Id
 	@Column(name = "id_departamento")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,7 +40,7 @@ public class Informe implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Calendar fechaSal;
 	
-	
+	//Constructor
 	public Informe() {
 		super();
 	}
@@ -54,7 +51,7 @@ public class Informe implements Serializable {
 		this.idInf = idInf;
 	}
 
-
+	//Get y Set
 	public Long getIdInf() {
 		return idInf;
 	}

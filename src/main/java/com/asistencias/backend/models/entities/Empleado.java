@@ -22,7 +22,7 @@ public class Empleado implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	
+	//Anotaciones
 	@Id
 	@Column(name = "id_empl")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,6 +52,7 @@ public class Empleado implements Serializable {
 	@Column(name = "estado_civil", length=20)
 	private String estadoCivil;
 
+	//Constructor
 	public Empleado() {
 		super();
 	}
@@ -61,6 +62,7 @@ public class Empleado implements Serializable {
 		this.idEmp = idEmp;
 	}
 
+	//Get y Set
 	public Long getIdEmp() {
 		return idEmp;
 	}

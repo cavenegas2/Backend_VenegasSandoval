@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Departamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+	//Comienzo de anotaciones
 	@Id
 	@Column(name = "id_departamento")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,15 +28,18 @@ public class Departamento implements Serializable {
 	@Column(name = "jefe", length=20)
 	private String jefe;
 
+	//Construcctor
 	public Departamento() {
 		super();
 	}
 
+	
 	public Departamento(Long idDep) {
 		super();
 		this.idDep = idDep;
 	}
 
+	//Get y Set
 	public Long getIdDep() {
 		return idDep;
 	}

@@ -17,8 +17,7 @@ public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	
-	
+	//Anotaciones
 	@Id
 	@Column(name = "id_usu")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,13 +27,18 @@ public class Usuario implements Serializable {
 	private String usuario;
 	@Column(name = "contrasena", length=50)
 	private String contrasena;
+
+	//Constructor
 	public Usuario() {
 		super();
 	}
+
 	public Usuario(Long idUsu) {
 		super();
 		this.idUsu = idUsu;
 	}
+
+	//Get y Set
 	public Long getIdUsu() {
 		return idUsu;
 	}

@@ -1,13 +1,16 @@
 package com.asistencias.backend.models.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Table(name="Departamentos")
@@ -27,6 +30,19 @@ public class Departamento implements Serializable {
 	
 	@Column(name = "jefe", length=20)
 	private String jefe;
+	
+	@OneToMany(mappedBy="departamento", fetch=FetchType.LAZY)
+	private List<Empleado> empleado;
+
+	public List<Empleado> getEmpleado() {
+		return empleado;
+	}
+
+
+	public void setEmpleado(List<Empleado> empleado) {
+		this.empleado = empleado;
+	}
+
 
 	//Construcctor
 	public Departamento() {

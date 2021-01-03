@@ -2,13 +2,18 @@ package com.asistencias.backend.models.entities;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -51,6 +56,23 @@ public class Empleado implements Serializable {
 	
 	@Column(name = "estado_civil", length=20)
 	private String estadoCivil;
+	
+	@JoinColumn(name="fk_departamento", referencedColumnName="id_departamento")
+	@ManyToOne
+	private Departamento  departamento;
+	
+	@OneToMany(mappedBy="empleado", fetch=FetchType.LAZY)
+	private List<Informe> informe;
+	
+	
+
+	public List<Informe> getInforme() {
+		return informe;
+	}
+
+	public void setInforme(List<Informe> informe) {
+		this.informe = informe;
+	}
 
 	//Constructor
 	public Empleado() {
@@ -117,6 +139,14 @@ public class Empleado implements Serializable {
 
 	public void setCorrero(String correro) {
 		this.correro = correro;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
 	public String getEstadoCivil() {

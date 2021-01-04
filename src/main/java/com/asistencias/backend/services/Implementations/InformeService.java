@@ -15,11 +15,12 @@ public class InformeService implements IInformeService {
 
 	@Override
 	public void save(Informe informe) {
-		// TODO Auto-generated method stub
+
 		try {
+			
 			dao.save(informe);
-		}
-		catch(Exception ex) {
+
+		} catch (Exception e) {
 			throw ex;
 		}
 		
@@ -27,25 +28,28 @@ public class InformeService implements IInformeService {
 
 	@Override
 	public Informe findById(Long id) {
-		// TODO Auto-generated method stub
+		
 		return dao.findById(id).get();
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+
 		try {
+			
 			dao.deleteById(id);
-		}
-		catch(Exception ex) {
+
+		} catch (Exception e) {
+			
 			throw ex;
+
 		}
 		
 	}
 
 	@Override
 	public List<Informe> findAll() {
-		// TODO Auto-generated method stub
+
 		return (List<Informe>) dao.findAll();
 	}
 

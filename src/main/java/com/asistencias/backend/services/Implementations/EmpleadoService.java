@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.asistencias.backend.controllers.dao.IEmpleado;
+import com.asistencias.backend.models.dao.IEmpleado;
 import com.asistencias.backend.models.entities.Empleado;
 import com.asistencias.backend.services.interfaces.IEmpleadoService;
 

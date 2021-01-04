@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.asistencias.backend.controllers.dao.IInforme;
+import com.asistencias.backend.models.dao.IInforme;
 import com.asistencias.backend.models.entities.Informe;
 import com.asistencias.backend.services.interfaces.IInformeService;
 
@@ -21,7 +21,7 @@ public class InformeService implements IInformeService {
 			dao.save(informe);
 
 		} catch (Exception e) {
-			throw ex;
+			throw e;
 		}
 		
 	}
@@ -41,7 +41,7 @@ public class InformeService implements IInformeService {
 
 		} catch (Exception e) {
 			
-			throw ex;
+			throw e;
 
 		}
 		

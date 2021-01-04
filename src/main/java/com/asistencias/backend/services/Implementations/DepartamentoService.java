@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.asistencias.backend.controllers.dao.IDepartamento;
+import com.asistencias.backend.models.dao.IDepartamento;
 import com.asistencias.backend.models.entities.Departamento;
 import com.asistencias.backend.services.interfaces.IDepartamentoService;
 
@@ -22,7 +22,7 @@ public class DepartamentoService implements IDepartamentoService {
 			
 			dao.save(departamento);
 
-		} catch (Exception e) {
+		} catch (Exception ex) {
 			throw ex;
 		}
 	}
@@ -41,7 +41,7 @@ public class DepartamentoService implements IDepartamentoService {
 			
 			dao.deleteById(id);
 
-		} catch (Exception e) {
+		} catch (Exception ex) {
 			
 			throw ex;
 
